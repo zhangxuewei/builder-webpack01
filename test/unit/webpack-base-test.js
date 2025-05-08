@@ -5,12 +5,14 @@ describe("webpack.base.js test case", () => {
   console.log(baseConfig);
   it("entry", () => {
     assert.equal(
-      baseConfig.entry.index,
-      "/Users/mac/Desktop/turboDemo/webpack/geektime-webpack-course/code/chapter04/my-project/builder-webpack/test/smoke/template/src/index/index.js"
+      baseConfig.entry.index.includes("test/smoke/template/src/index/index.js"),
+      true
     );
     assert.equal(
-      baseConfig.entry.search,
-      "/Users/mac/Desktop/turboDemo/webpack/geektime-webpack-course/code/chapter04/my-project/builder-webpack/test/smoke/template/src/search/index.js"
+      baseConfig.entry.search.includes(
+        "test/smoke/template/src/search/index.js"
+      ),
+      true
     );
   });
 });
